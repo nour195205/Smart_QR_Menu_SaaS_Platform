@@ -1,0 +1,97 @@
+:root {
+  /* Default Theme Variables (will be overridden by ThemeInjector) */
+  --primary-color: #FF6B35;
+  --secondary-color: #2E294E;
+  --bg-color: #FFFFFF;
+  --text-color: #1A1A2E;
+  --font-family: 'Outfit', sans-serif;
+  
+  /* Layout Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  
+  /* Card Styles */
+  --card-radius: 12px;
+  --card-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  --card-bg: #FFFFFF;
+}
+
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: #E0E0E0;
+  --card-bg: #1E1E1E;
+  --card-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Typography */
+h1, h2, h3, h4, p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+/* Utilities */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: var(--spacing-md);
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(0,0,0,0.1);
+  border-top-color: var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Layouts */
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.list-layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
