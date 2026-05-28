@@ -1,0 +1,49 @@
+{
+    "restaurant": {
+        "name": "300",
+        "slug": "300",
+        "logo_url": null,
+        "cover_url": null,
+        "description": null,
+        "phone": null,
+        "address": null,
+        "social_links": [],
+        "menu_type": "dynamic",
+        "currency_code": "USD",
+        "currency_symbol": "$"
+    },
+    "theme": {
+        "primary_color": "#55171c",
+        "secondary_color": "#000000",
+        "background_color": "#55171c",
+        "text_color": "#ffffff",
+        "font_family": "Outfit",
+        "card_style": "rounded",
+        "dark_mode": false,
+        "layout_style": "grid"
+    },
+    "categories": [
+        {
+            "id": 2,
+            "name": "حلو",
+            "description": null,
+            "image_url": null,
+            "items": [
+                {
+                    "id": 2,
+                    "name": "تشيز كيك",
+                    "description": "هيبرتهخ",
+                    "price": "75.00",
+                    "currency_symbol": "$",
+                    "image_url": null,
+                    "tags": [
+                        "شكيهابشهخ"
+                    ],
+                    "is_available": true
+                }
+            ]
+        }
+    ],
+    "pdf_url": "http:\/\/127.0.0.1:8000\/storage\/qrmenu\/300\/pdfs\/6a179d50f2e70.tmp",
+    "generated_at": "2026-05-28T14:00:42+00:00"
+}
