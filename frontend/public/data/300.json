@@ -2,59 +2,38 @@
     "restaurant": {
         "name": "300",
         "slug": "300",
-        "logo_url": null,
+        "logo_url": "https:\/\/res.cloudinary.com\/dphtgmm69\/image\/upload\/v1781220175\/qrmenu\/300\/logo\/pxu4xaymx8e0enlju3ci.png",
         "cover_url": null,
         "description": null,
         "phone": null,
         "address": null,
         "social_links": [],
-        "menu_type": "dynamic",
+        "menu_type": "pdf",
         "currency_code": "USD",
         "currency_symbol": "$"
     },
     "theme": {
-        "primary_color": "#10B981",
-        "secondary_color": "#000000",
-        "background_color": "#F3F4F6",
-        "text_color": "#1F2937",
-        "category_title_color": "#111827",
-        "item_title_color": "#111827",
-        "item_description_color": "#6B7280",
-        "item_price_color": "#10B981",
-        "card_background_color": "#FFFFFF",
-        "text_alignment": "left",
-        "font_family": "Inter",
-        "card_style": "rounded",
+        "primary_color": "#55171c",
+        "secondary_color": "#ffffff",
+        "background_color": "#55171c",
+        "text_color": "#ffffff",
+        "category_title_color": "#ffffff",
+        "item_title_color": "#ffffff",
+        "item_description_color": "#959697",
+        "item_price_color": "#ffffff",
+        "card_background_color": "#86232b",
+        "text_alignment": "center",
+        "font_family": "Outfit",
+        "card_style": "shadow",
         "dark_mode": false,
         "layout_style": "list",
         "image_position": "left",
-        "image_shape": "rounded",
+        "image_shape": "circle",
         "card_hover_effect": "lift",
         "animation_style": "fade",
-        "animation_speed": "normal"
+        "animation_speed": "slow"
     },
-    "categories": [
-        {
-            "id": 2,
-            "name": "حلو",
-            "description": null,
-            "image_url": null,
-            "items": [
-                {
-                    "id": 2,
-                    "name": "تشيز كيك",
-                    "description": "هيبرتهخ",
-                    "price": "75.00",
-                    "currency_symbol": "$",
-                    "image_url": null,
-                    "tags": [
-                        "شكيهابشهخ"
-                    ],
-                    "is_available": true
-                }
-            ]
-        }
-    ],
-    "pdf_url": "http:\/\/127.0.0.1:8000\/storage\/qrmenu\/300\/pdfs\/6a179d50f2e70.tmp",
-    "generated_at": "2026-06-11T15:49:15+00:00"
+    "categories": [],
+    "pdf_url": "https:\/\/res.cloudinary.com\/dphtgmm69\/image\/upload\/v1781219713\/qrmenu\/300\/pdfs\/zvilagpo8wkpejauuai7.pdf",
+    "generated_at": "2026-06-11T23:22:58+00:00"
 }
