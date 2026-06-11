@@ -24,7 +24,10 @@ const ItemCard = ({ item, theme, currencySymbol }) => {
         {item.description && <p style={styles.description}>{item.description}</p>}
         
         {item.tags && item.tags.length > 0 && (
-          <div style={styles.tags}>
+          <div style={{
+            ...styles.tags,
+            justifyContent: theme?.text_alignment === 'center' ? 'center' : theme?.text_alignment === 'right' ? 'flex-end' : 'flex-start'
+          }}>
             {item.tags.map((tag, idx) => (
               <span key={idx} style={styles.tag}>{tag}</span>
             ))}
@@ -85,7 +88,6 @@ const styles = {
   tags: {
     display: 'flex',
     flexWrap: 'wrap',
-    justifyContent: theme?.text_alignment === 'center' ? 'center' : theme?.text_alignment === 'right' ? 'flex-end' : 'flex-start',
     gap: 'var(--spacing-xs)',
     marginTop: 'var(--spacing-xs)',
   },
