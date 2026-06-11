@@ -16,7 +16,7 @@
         "primary_color": "#55171c",
         "secondary_color": "#000000",
         "background_color": "#55171c",
-        "text_color": "#ffffff",
+        "text_color": "#55171c",
         "font_family": "Outfit",
         "card_style": "rounded",
         "dark_mode": false,
@@ -45,5 +45,5 @@
         }
     ],
     "pdf_url": "http:\/\/127.0.0.1:8000\/storage\/qrmenu\/300\/pdfs\/6a179d50f2e70.tmp",
-    "generated_at": "2026-06-11T14:08:51+00:00"
+    "generated_at": "2026-06-11T14:09:40+00:00"
 }
