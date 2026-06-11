@@ -22,7 +22,7 @@
         "item_description_color": "#666666",
         "item_price_color": "#000000",
         "card_background_color": "#ffffff",
-        "text_alignment": "left",
+        "text_alignment": "right",
         "font_family": "Outfit",
         "card_style": "rounded",
         "dark_mode": false,
@@ -51,5 +51,5 @@
         }
     ],
     "pdf_url": "http:\/\/127.0.0.1:8000\/storage\/qrmenu\/300\/pdfs\/6a179d50f2e70.tmp",
-    "generated_at": "2026-06-11T15:19:32+00:00"
+    "generated_at": "2026-06-11T15:48:46+00:00"
 }
