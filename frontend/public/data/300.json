@@ -13,7 +13,7 @@
         "currency_symbol": "$"
     },
     "theme": {
-        "primary_color": "#ffffff",
+        "primary_color": "#000000",
         "secondary_color": "#000000",
         "background_color": "#ff7581",
         "text_color": "#ffffff",
@@ -45,5 +45,5 @@
         }
     ],
     "pdf_url": "http:\/\/127.0.0.1:8000\/storage\/qrmenu\/300\/pdfs\/6a179d50f2e70.tmp",
-    "generated_at": "2026-06-11T13:34:43+00:00"
+    "generated_at": "2026-06-11T13:53:40+00:00"
 }
