@@ -1,13 +1,6 @@
-// ─── Constants ───────────────────────────────────────────────────────────────
-
-/** Full menu JSON expires after 24 hours (safety net if version check fails). */
-const MENU_CACHE_EXPIRY_MS  = 1000 * 60 * 60 * 24;
-
-/** Version string (generated_at) — no expiry, it's just a lightweight key. */
-const VERSION_KEY_PREFIX = 'menu_version_';
-const MENU_KEY_PREFIX    = 'menu_';
-
-// ─── Full menu cache ──────────────────────────────────────────────────────────
+/** Full menu JSON expires after 24 hours (safety net only — fresh fetch always happens first). */
+const CACHE_EXPIRY_MS = 1000 * 60 * 60 * 24;
+const KEY_PREFIX      = 'menu_';
 
 /**
  * Returns the cached full menu object, or null if absent / expired.
@@ -16,13 +9,13 @@ const MENU_KEY_PREFIX    = 'menu_';
  */
 export const getCachedMenu = (slug) => {
   try {
-    const raw = localStorage.getItem(`${MENU_KEY_PREFIX}${slug}`);
+    const raw = localStorage.getItem(`${KEY_PREFIX}${slug}`);
     if (!raw) return null;
 
     const { timestamp, data } = JSON.parse(raw);
 
-    if (Date.now() - timestamp > MENU_CACHE_EXPIRY_MS) {
-      localStorage.removeItem(`${MENU_KEY_PREFIX}${slug}`);
+    if (Date.now() - timestamp > CACHE_EXPIRY_MS) {
+      localStorage.removeItem(`${KEY_PREFIX}${slug}`);
       return null;
     }
 
@@ -40,38 +33,10 @@ export const getCachedMenu = (slug) => {
 export const setCachedMenu = (slug, data) => {
   try {
     localStorage.setItem(
-      `${MENU_KEY_PREFIX}${slug}`,
+      `${KEY_PREFIX}${slug}`,
       JSON.stringify({ timestamp: Date.now(), data }),
     );
   } catch (e) {
     console.warn('Failed to save menu to cache', e);
-  }
-};
-
-// ─── Version cache (tiny, just the ISO timestamp string) ─────────────────────
-
-/**
- * Returns the cached version string (generated_at) for a slug, or null.
- * @param {string} slug
- * @returns {string|null}
- */
-export const getCachedVersion = (slug) => {
-  try {
-    return localStorage.getItem(`${VERSION_KEY_PREFIX}${slug}`) ?? null;
-  } catch {
-    return null;
-  }
-};
-
-/**
- * Persist the version string for a slug.
- * @param {string} slug
- * @param {string} version  — ISO timestamp (generated_at)
- */
-export const setCachedVersion = (slug, version) => {
-  try {
-    localStorage.setItem(`${VERSION_KEY_PREFIX}${slug}`, version);
-  } catch (e) {
-    console.warn('Failed to save menu version to cache', e);
   }
 };
