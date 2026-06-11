@@ -3,12 +3,13 @@
 // Prod: Read directly from GitHub Raw CDN — no Netlify rebuild needed,
 //       menu updates go live within seconds of a Publish.
 
-const GITHUB_RAW_BASE = `https://raw.githubusercontent.com/${import.meta.env.VITE_GITHUB_OWNER}/${import.meta.env.VITE_GITHUB_REPO}/${import.meta.env.VITE_GITHUB_BRANCH}/frontend/public/data`;
+const GITHUB_RAW_BASE = 'https://raw.githubusercontent.com/nour195205/Smart_QR_Menu_SaaS_Platform/main/frontend/public/data';
 
 const getMenuUrl = (slug) =>
   import.meta.env.DEV
     ? `/data/${slug}.json`
-    : `${GITHUB_RAW_BASE}/${slug}.json`;
+    // ?t= busts GitHub's CDN cache (300s TTL) so every visit gets truly fresh data
+    : `${GITHUB_RAW_BASE}/${slug}.json?t=${Date.now()}`;
 
 /**
  * Fetch the full menu JSON for a given slug.
