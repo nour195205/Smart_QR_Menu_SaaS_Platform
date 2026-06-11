@@ -41,7 +41,7 @@ const styles = {
   title: {
     fontSize: '1.5rem',
     fontWeight: '700',
-    color: 'var(--text-color)',
+    color: 'var(--category-title-color, var(--text-color))',
   },
   description: {
     fontSize: '0.9rem',

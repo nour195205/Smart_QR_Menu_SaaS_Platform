@@ -71,14 +71,20 @@ class MenuJsonGenerator
         }
 
         return [
-            'primary_color'    => $theme->primary_color,
-            'secondary_color'  => $theme->secondary_color,
-            'background_color' => $theme->background_color,
-            'text_color'       => $theme->text_color,
-            'font_family'      => $theme->font_family,
-            'card_style'       => $theme->card_style,
-            'dark_mode'        => (bool) $theme->dark_mode,
-            'layout_style'     => $theme->layout_style,
+            'primary_color'          => $theme->primary_color,
+            'secondary_color'        => $theme->secondary_color,
+            'background_color'       => $theme->background_color,
+            'text_color'             => $theme->text_color,
+            'category_title_color'   => $theme->category_title_color,
+            'item_title_color'       => $theme->item_title_color,
+            'item_description_color' => $theme->item_description_color,
+            'item_price_color'       => $theme->item_price_color,
+            'card_background_color'  => $theme->card_background_color,
+            'text_alignment'         => $theme->text_alignment,
+            'font_family'            => $theme->font_family,
+            'card_style'             => $theme->card_style,
+            'dark_mode'              => (bool) $theme->dark_mode,
+            'layout_style'           => $theme->layout_style,
         ];
     }
 

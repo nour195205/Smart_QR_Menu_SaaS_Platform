@@ -38,7 +38,7 @@ const ItemCard = ({ item, theme, currencySymbol }) => {
 // Inline styles for basic structure, relying on CSS vars for colors
 const styles = {
   card: {
-    backgroundColor: 'var(--card-bg)',
+    backgroundColor: 'var(--card-bg-custom, var(--card-bg))',
     borderRadius: 'var(--card-radius)',
     overflow: 'hidden',
     boxShadow: 'var(--card-shadow)',
@@ -56,6 +56,7 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     gap: 'var(--spacing-sm)',
+    textAlign: 'var(--text-align, left)',
   },
   header: {
     display: 'flex',
@@ -66,24 +67,25 @@ const styles = {
   title: {
     fontSize: '1.125rem',
     fontWeight: '600',
-    color: 'var(--text-color)',
+    color: 'var(--item-title-color, var(--text-color))',
     lineHeight: '1.4',
   },
   price: {
     fontSize: '1.125rem',
     fontWeight: '700',
-    color: 'var(--primary-color)',
+    color: 'var(--item-price-color, var(--primary-color))',
     whiteSpace: 'nowrap',
   },
   description: {
     fontSize: '0.875rem',
-    color: 'var(--text-color)',
+    color: 'var(--item-desc-color, var(--text-color))',
     opacity: 0.8,
     lineHeight: '1.5',
   },
   tags: {
     display: 'flex',
     flexWrap: 'wrap',
+    justifyContent: theme?.text_alignment === 'center' ? 'center' : theme?.text_alignment === 'right' ? 'flex-end' : 'flex-start',
     gap: 'var(--spacing-xs)',
     marginTop: 'var(--spacing-xs)',
   },
