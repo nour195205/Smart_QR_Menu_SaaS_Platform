@@ -30,6 +30,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        \Illuminate\Support\Facades\Schema::defaultStringLength(191);
+        
         Category::observe(CategoryObserver::class);
         Item::observe(ItemObserver::class);
         Theme::observe(ThemeObserver::class);
