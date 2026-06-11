@@ -5,15 +5,42 @@ const ItemCard = ({ item, theme, currencySymbol }) => {
   const cardStyleClass = theme?.card_style === 'flat' ? 'card-flat' :
                          theme?.card_style === 'shadow' ? 'card-shadow' : 'card-rounded';
 
+  // Advanced settings
+  const imgPosition = theme?.advanced_settings?.image_position || theme?.image_position || 'top';
+  const isHorizontal = imgPosition === 'left' || imgPosition === 'right';
+  
+  // Dynamic Inline Styles based on Theme
+  const dynamicCardStyle = {
+    ...styles.card,
+    flexDirection: isHorizontal ? (imgPosition === 'left' ? 'row' : 'row-reverse') : 'column',
+    transform: 'var(--card-hover-transform, none)',
+    transition: 'transform 0.3s ease',
+  };
+
+  const dynamicImageContainerStyle = {
+    width: isHorizontal ? '120px' : '100%',
+    flexShrink: 0,
+    padding: theme?.image_shape === 'circle' ? '16px' : '0',
+  };
+
+  const dynamicImageStyle = {
+    ...styles.image,
+    height: isHorizontal ? '120px' : '200px',
+    borderRadius: 'var(--image-shape-radius, 0px)',
+    margin: theme?.image_shape === 'circle' && isHorizontal ? 'auto' : '0',
+  };
+
   return (
-    <div className={`item-card ${cardStyleClass}`} style={styles.card}>
+    <div className={`item-card ${cardStyleClass}`} style={dynamicCardStyle}>
       {item.image_url && (
-        <img 
-          src={item.image_url} 
-          alt={item.name} 
-          loading="lazy" 
-          style={styles.image} 
-        />
+        <div style={dynamicImageContainerStyle}>
+            <img 
+            src={item.image_url} 
+            alt={item.name} 
+            loading="lazy" 
+            style={dynamicImageStyle} 
+            />
+        </div>
       )}
       <div style={styles.content}>
         <div style={styles.header}>
@@ -38,7 +65,7 @@ const ItemCard = ({ item, theme, currencySymbol }) => {
   );
 };
 
-// Inline styles for basic structure, relying on CSS vars for colors
+// Base styles relying on CSS vars for colors
 const styles = {
   card: {
     backgroundColor: 'var(--card-bg-custom, var(--card-bg))',
@@ -46,12 +73,10 @@ const styles = {
     overflow: 'hidden',
     boxShadow: 'var(--card-shadow)',
     display: 'flex',
-    flexDirection: 'column',
     border: '1px solid rgba(0,0,0,0.05)',
   },
   image: {
     width: '100%',
-    height: '200px',
     objectFit: 'cover',
   },
   content: {
@@ -60,6 +85,7 @@ const styles = {
     flexDirection: 'column',
     gap: 'var(--spacing-sm)',
     textAlign: 'var(--text-align, left)',
+    flex: 1,
   },
   header: {
     display: 'flex',

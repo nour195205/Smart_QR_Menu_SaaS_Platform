@@ -23,10 +23,12 @@ class Theme extends Model
         'card_style',
         'dark_mode',
         'layout_style',
+        'advanced_settings',
     ];
 
     protected $casts = [
         'dark_mode' => 'boolean',
+        'advanced_settings' => 'array',
     ];
 
     // ─── Relationships ───────────────────────────────────────────────────────

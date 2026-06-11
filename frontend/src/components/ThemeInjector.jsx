@@ -20,6 +20,17 @@ const ThemeInjector = ({ theme }) => {
     if (theme.text_alignment) root.style.setProperty('--text-align', theme.text_alignment);
     if (theme.font_family) root.style.setProperty('--font-family', `"${theme.font_family}", sans-serif`);
 
+    // Advanced Settings mapping
+    if (theme.animation_speed) {
+        const speedMap = { fast: '0.2s', normal: '0.4s', slow: '0.8s' };
+        root.style.setProperty('--anim-speed', speedMap[theme.animation_speed] || '0.4s');
+    }
+    
+    // Some variables aren't directly CSS values but logic drivers, 
+    // but exposing them as CSS vars helps with generic CSS bindings.
+    if (theme.image_shape) root.style.setProperty('--image-shape-radius', theme.image_shape === 'circle' ? '50%' : (theme.image_shape === 'rounded' ? '12px' : '0px'));
+    if (theme.card_hover_effect) root.style.setProperty('--card-hover-transform', theme.card_hover_effect === 'lift' ? 'translateY(-4px)' : (theme.card_hover_effect === 'scale' ? 'scale(1.02)' : 'none'));
+
     if (theme.dark_mode) {
       document.body.classList.add('dark-mode');
     } else {

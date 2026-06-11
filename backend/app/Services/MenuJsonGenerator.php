@@ -70,7 +70,7 @@ class MenuJsonGenerator
             return null;
         }
 
-        return [
+        $baseData = [
             'primary_color'          => $theme->primary_color,
             'secondary_color'        => $theme->secondary_color,
             'background_color'       => $theme->background_color,
@@ -86,6 +86,10 @@ class MenuJsonGenerator
             'dark_mode'              => (bool) $theme->dark_mode,
             'layout_style'           => $theme->layout_style,
         ];
+
+        $advancedData = $theme->advanced_settings ?? [];
+
+        return array_merge($baseData, $advancedData);
     }
 
     /**

@@ -6,9 +6,10 @@ const CategorySection = ({ category, theme, currencySymbol }) => {
   if (!category.items || category.items.length === 0) return null;
 
   const layoutClass = theme?.layout_style === 'list' ? 'list-layout' : 'grid-layout';
+  const animClass = theme?.animation_style && theme.animation_style !== 'none' ? `anim-${theme.animation_style}` : '';
 
   return (
-    <section id={`category-${category.id}`} style={styles.section}>
+    <section id={`category-${category.id}`} className={animClass} style={styles.section}>
       <div style={styles.header}>
         <h2 style={styles.title}>{category.name}</h2>
         {category.description && <p style={styles.description}>{category.description}</p>}
