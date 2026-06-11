@@ -17,6 +17,12 @@
         "secondary_color": "#000000",
         "background_color": "#55171c",
         "text_color": "#55171c",
+        "category_title_color": "#ffffff",
+        "item_title_color": "#000000",
+        "item_description_color": "#666666",
+        "item_price_color": "#000000",
+        "card_background_color": "#ffffff",
+        "text_alignment": "left",
         "font_family": "Outfit",
         "card_style": "rounded",
         "dark_mode": false,
@@ -45,5 +51,5 @@
         }
     ],
     "pdf_url": "http:\/\/127.0.0.1:8000\/storage\/qrmenu\/300\/pdfs\/6a179d50f2e70.tmp",
-    "generated_at": "2026-06-11T14:09:40+00:00"
+    "generated_at": "2026-06-11T15:17:50+00:00"
 }
