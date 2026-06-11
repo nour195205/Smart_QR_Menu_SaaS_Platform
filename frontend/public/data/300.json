@@ -2,7 +2,7 @@
     "restaurant": {
         "name": "300",
         "slug": "300",
-        "logo_url": null,
+        "logo_url": "https:\/\/res.cloudinary.com\/dphtgmm69\/image\/upload\/v1781220175\/qrmenu\/300\/logo\/pxu4xaymx8e0enlju3ci.png",
         "cover_url": null,
         "description": null,
         "phone": null,
@@ -35,5 +35,5 @@
     },
     "categories": [],
     "pdf_url": "https:\/\/res.cloudinary.com\/dphtgmm69\/image\/upload\/v1781219713\/qrmenu\/300\/pdfs\/zvilagpo8wkpejauuai7.pdf",
-    "generated_at": "2026-06-11T23:15:59+00:00"
+    "generated_at": "2026-06-11T23:22:58+00:00"
 }
