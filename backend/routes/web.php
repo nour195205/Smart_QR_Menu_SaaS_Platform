@@ -88,3 +88,13 @@ Route::middleware('auth')->group(function () {
 // ─── Breeze Auth Routes (login, register, password reset, etc.) ───────────────
 require __DIR__.'/auth.php';
 
+// ─── Shared Hosting Installation Routes ───────────────────────────────────────
+Route::get('/install/migrate', function () {
+    \Illuminate\Support\Facades\Artisan::call('migrate', ['--force' => true]);
+    return 'Database migrated successfully! For security, please remove this route after deployment.';
+});
+
+Route::get('/install/clear', function () {
+    \Illuminate\Support\Facades\Artisan::call('optimize:clear');
+    return 'Cache cleared successfully!';
+});
