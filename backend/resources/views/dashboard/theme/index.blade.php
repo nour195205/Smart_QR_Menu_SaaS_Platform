@@ -13,32 +13,32 @@
                 <div class="form-group">
                     <label class="form-label" for="primary_color">Primary Color</label>
                     <div style="display: flex; gap: 8px;">
-                        <input type="color" id="primary_color" name="primary_color" value="{{ old('primary_color', $theme->primary_color ?? '#FF6B35') }}" style="height: 48px; width: 48px; border-radius: 8px; border: 1px solid var(--border); padding: 0;">
-                        <input type="text" class="form-control" value="{{ old('primary_color', $theme->primary_color ?? '#FF6B35') }}" onchange="document.getElementById('primary_color').value = this.value">
+                        <input type="color" id="primary_color" name="primary_color" value="{{ old('primary_color', $theme->primary_color ?? '#FF6B35') }}" oninput="document.getElementById('primary_color_text').value = this.value" style="height: 48px; width: 48px; border-radius: 8px; border: 1px solid var(--border); padding: 0;">
+                        <input type="text" id="primary_color_text" class="form-control" value="{{ old('primary_color', $theme->primary_color ?? '#FF6B35') }}" oninput="document.getElementById('primary_color').value = this.value">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="form-label" for="secondary_color">Secondary Color</label>
                     <div style="display: flex; gap: 8px;">
-                        <input type="color" id="secondary_color" name="secondary_color" value="{{ old('secondary_color', $theme->secondary_color ?? '#2E294E') }}" style="height: 48px; width: 48px; border-radius: 8px; border: 1px solid var(--border); padding: 0;">
-                        <input type="text" class="form-control" value="{{ old('secondary_color', $theme->secondary_color ?? '#2E294E') }}" onchange="document.getElementById('secondary_color').value = this.value">
+                        <input type="color" id="secondary_color" name="secondary_color" value="{{ old('secondary_color', $theme->secondary_color ?? '#2E294E') }}" oninput="document.getElementById('secondary_color_text').value = this.value" style="height: 48px; width: 48px; border-radius: 8px; border: 1px solid var(--border); padding: 0;">
+                        <input type="text" id="secondary_color_text" class="form-control" value="{{ old('secondary_color', $theme->secondary_color ?? '#2E294E') }}" oninput="document.getElementById('secondary_color').value = this.value">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="form-label" for="background_color">Background Color</label>
                     <div style="display: flex; gap: 8px;">
-                        <input type="color" id="background_color" name="background_color" value="{{ old('background_color', $theme->background_color ?? '#FFFFFF') }}" style="height: 48px; width: 48px; border-radius: 8px; border: 1px solid var(--border); padding: 0;">
-                        <input type="text" class="form-control" value="{{ old('background_color', $theme->background_color ?? '#FFFFFF') }}" onchange="document.getElementById('background_color').value = this.value">
+                        <input type="color" id="background_color" name="background_color" value="{{ old('background_color', $theme->background_color ?? '#FFFFFF') }}" oninput="document.getElementById('background_color_text').value = this.value" style="height: 48px; width: 48px; border-radius: 8px; border: 1px solid var(--border); padding: 0;">
+                        <input type="text" id="background_color_text" class="form-control" value="{{ old('background_color', $theme->background_color ?? '#FFFFFF') }}" oninput="document.getElementById('background_color').value = this.value">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="form-label" for="text_color">Text Color</label>
                     <div style="display: flex; gap: 8px;">
-                        <input type="color" id="text_color" name="text_color" value="{{ old('text_color', $theme->text_color ?? '#1A1A2E') }}" style="height: 48px; width: 48px; border-radius: 8px; border: 1px solid var(--border); padding: 0;">
-                        <input type="text" class="form-control" value="{{ old('text_color', $theme->text_color ?? '#1A1A2E') }}" onchange="document.getElementById('text_color').value = this.value">
+                        <input type="color" id="text_color" name="text_color" value="{{ old('text_color', $theme->text_color ?? '#1A1A2E') }}" oninput="document.getElementById('text_color_text').value = this.value" style="height: 48px; width: 48px; border-radius: 8px; border: 1px solid var(--border); padding: 0;">
+                        <input type="text" id="text_color_text" class="form-control" value="{{ old('text_color', $theme->text_color ?? '#1A1A2E') }}" oninput="document.getElementById('text_color').value = this.value">
                     </div>
                 </div>
             </div>

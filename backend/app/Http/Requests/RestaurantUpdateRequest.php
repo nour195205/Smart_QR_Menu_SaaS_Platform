@@ -20,6 +20,7 @@ class RestaurantUpdateRequest extends FormRequest
             'address'         => ['nullable', 'string', 'max:500'],
             'currency_code'   => ['required', 'string', 'max:10'],
             'currency_symbol' => ['required', 'string', 'max:10'],
+            'menu_type'       => ['required', 'in:dynamic,pdf'],
             'social_links'    => ['nullable', 'array'],
             'social_links.*'  => ['nullable', 'url', 'max:500'],
             'logo'            => ['nullable', 'image', 'mimes:jpeg,png,jpg,webp', 'max:2048'],

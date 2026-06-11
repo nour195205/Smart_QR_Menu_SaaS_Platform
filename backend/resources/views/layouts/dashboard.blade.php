@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Smart QR Menu</title>
+    <title>Dashboard - MenuFlow</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -14,7 +14,7 @@
     <!-- Sidebar -->
     <aside class="sidebar">
         <div class="sidebar-header">
-            <i data-lucide="qr-code"></i> Smart QR
+            <i data-lucide="qr-code"></i> MenuFlow
         </div>
         <nav class="sidebar-nav">
             <a href="{{ route('dashboard.index') }}" class="nav-item {{ request()->routeIs('dashboard.index') ? 'active' : '' }}">

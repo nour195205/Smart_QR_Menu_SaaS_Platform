@@ -43,6 +43,16 @@
                 </div>
             </div>
 
+            <div class="form-group" style="margin-top: 20px;">
+                <label class="form-label" for="menu_type">Active Menu Type *</label>
+                <select id="menu_type" name="menu_type" class="form-control" required>
+                    <option value="dynamic" {{ old('menu_type', $restaurant->menu_type) === 'dynamic' ? 'selected' : '' }}>Dynamic Menu (Categories & Items)</option>
+                    <option value="pdf" {{ old('menu_type', $restaurant->menu_type) === 'pdf' ? 'selected' : '' }}>PDF Menu (Uploaded File)</option>
+                </select>
+                <p style="font-size: 0.875rem; color: var(--text-secondary); margin-top: 8px;">Select which menu mode customers will see when they scan your QR code.</p>
+                @error('menu_type') <span style="color: var(--danger); font-size: 0.875rem;">{{ $message }}</span> @enderror
+            </div>
+
             <hr style="border-color: var(--border); margin: 32px 0;">
 
             <div class="form-group">

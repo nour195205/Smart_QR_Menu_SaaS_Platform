@@ -29,7 +29,7 @@ const MenuPage = () => {
     );
   }
 
-  const { restaurant, theme, menu_type, pdf_menu, categories } = data;
+  const { restaurant, theme, categories, pdf_url } = data;
 
   return (
     <>
@@ -47,8 +47,8 @@ const MenuPage = () => {
 
         {/* Content based on Menu Type */}
         <main style={styles.main}>
-          {menu_type === 'pdf' && pdf_menu ? (
-            <PdfViewer pdfUrl={pdf_menu.file_url} />
+          {restaurant.menu_type === 'pdf' && pdf_url ? (
+            <PdfViewer pdfUrl={pdf_url} />
           ) : (
             <div>
               {categories && categories.length > 0 ? (
@@ -69,7 +69,10 @@ const MenuPage = () => {
         
         {/* Footer */}
         <footer style={styles.footer}>
-          <p>Powered by <strong>Smart QR Menu</strong></p>
+          <p>Powered by <strong>MenuFlow</strong></p>
+          <p style={{ marginTop: '8px', fontSize: '0.8rem' }}>
+            Developed by <a href="https://nour-ashour-portofolio.netlify.app/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>Nour Ashour</a>
+          </p>
         </footer>
       </div>
     </>

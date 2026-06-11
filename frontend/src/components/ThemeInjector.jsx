@@ -6,11 +6,21 @@ const ThemeInjector = ({ theme }) => {
 
     const root = document.documentElement;
 
+    console.log('Loaded Theme Object:', theme);
+
     if (theme.primary_color) root.style.setProperty('--primary-color', theme.primary_color);
     if (theme.secondary_color) root.style.setProperty('--secondary-color', theme.secondary_color);
     if (theme.background_color) root.style.setProperty('--bg-color', theme.background_color);
     if (theme.text_color) root.style.setProperty('--text-color', theme.text_color);
     if (theme.font_family) root.style.setProperty('--font-family', `"${theme.font_family}", sans-serif`);
+
+    console.log('Applied CSS variables:', {
+      '--primary-color': root.style.getPropertyValue('--primary-color'),
+      '--secondary-color': root.style.getPropertyValue('--secondary-color'),
+      '--bg-color': root.style.getPropertyValue('--bg-color'),
+      '--text-color': root.style.getPropertyValue('--text-color'),
+      '--font-family': root.style.getPropertyValue('--font-family'),
+    });
 
     if (theme.dark_mode) {
       document.body.classList.add('dark-mode');

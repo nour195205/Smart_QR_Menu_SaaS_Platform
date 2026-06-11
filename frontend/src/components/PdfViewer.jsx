@@ -1,22 +1,69 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Document, Page, pdfjs } from 'react-pdf';
+import 'react-pdf/dist/Page/AnnotationLayer.css';
+import 'react-pdf/dist/Page/TextLayer.css';
+
+// Configure the worker for pdfjs
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  'pdfjs-dist/build/pdf.worker.min.mjs',
+  import.meta.url,
+).toString();
 
 const PdfViewer = ({ pdfUrl }) => {
+  const [numPages, setNumPages] = useState(null);
+  const [error, setError] = useState(null);
+
   if (!pdfUrl) return null;
+
+  // For local testing without Cloudinary, proxy the URL to bypass CORS
+  const fetchUrl = pdfUrl.startsWith('http://127.0.0.1:8000') 
+    ? pdfUrl.replace('http://127.0.0.1:8000', '') 
+    : pdfUrl;
+
+  function onDocumentLoadSuccess({ numPages }) {
+    setNumPages(numPages);
+  }
+  
+  function onDocumentLoadError(err) {
+    console.error("PDF Load Error:", err);
+    setError(err.message);
+  }
 
   return (
     <div style={styles.container}>
-      <object 
-        data={pdfUrl} 
-        type="application/pdf" 
-        style={styles.viewer}
-      >
+      {error && (
         <div style={styles.fallback}>
-          <p>Your browser doesn't support embedded PDFs.</p>
+          <p>We couldn't load the embedded PDF natively.</p>
           <a href={pdfUrl} target="_blank" rel="noopener noreferrer" style={styles.button}>
-            Download PDF Menu
+            Open PDF Menu
           </a>
         </div>
-      </object>
+      )}
+      
+      {!error && (
+        <Document
+          file={fetchUrl}
+          onLoadSuccess={onDocumentLoadSuccess}
+          onLoadError={onDocumentLoadError}
+          loading={
+            <div style={styles.loading}>
+              <div className="spinner" style={{margin: '0 auto 16px auto'}}></div>
+              <p>Loading Menu...</p>
+            </div>
+          }
+        >
+          {Array.from(new Array(numPages), (el, index) => (
+            <div key={`page_${index + 1}`} style={styles.pageContainer}>
+              <Page
+                pageNumber={index + 1}
+                renderTextLayer={false}
+                renderAnnotationLayer={false}
+                width={Math.min(window.innerWidth - 32, 800)} // Responsive width
+              />
+            </div>
+          ))}
+        </Document>
+      )}
     </div>
   );
 };
@@ -24,35 +71,39 @@ const PdfViewer = ({ pdfUrl }) => {
 const styles = {
   container: {
     width: '100%',
-    height: 'calc(100vh - 150px)', // Adjust based on header height
-    minHeight: '500px',
-    backgroundColor: '#f5f5f5',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    backgroundColor: 'transparent',
+  },
+  pageContainer: {
+    marginBottom: '16px',
+    boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
     borderRadius: '8px',
     overflow: 'hidden',
-    border: '1px solid #ddd',
   },
-  viewer: {
-    width: '100%',
-    height: '100%',
-    border: 'none',
+  loading: {
+    padding: '40px',
+    textAlign: 'center',
+    color: 'var(--text-color)',
+    opacity: 0.7,
   },
   fallback: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    height: '100%',
-    padding: '20px',
+    padding: '40px',
     textAlign: 'center',
   },
   button: {
     marginTop: '16px',
     display: 'inline-block',
-    padding: '10px 20px',
+    padding: '12px 24px',
     backgroundColor: 'var(--primary-color, #FF6B35)',
     color: '#fff',
     textDecoration: 'none',
-    borderRadius: '4px',
+    borderRadius: '8px',
     fontWeight: 'bold',
   }
 };

@@ -28,6 +28,8 @@ class ThemeController extends Controller
             $request->validated()
         );
 
+        $restaurant->markDirty();
+
         return redirect()->route('dashboard.theme.edit')->with('success', 'Theme updated successfully.');
     }
 }

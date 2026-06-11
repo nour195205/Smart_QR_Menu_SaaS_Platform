@@ -41,6 +41,7 @@ class RestaurantController extends Controller
         }
 
         $restaurant->update($data);
+        $restaurant->markDirty();
 
         return redirect()->route('dashboard.restaurant.edit')->with('success', 'Restaurant settings updated successfully.');
     }
