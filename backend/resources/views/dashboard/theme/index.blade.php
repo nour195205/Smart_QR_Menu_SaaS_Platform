@@ -22,43 +22,43 @@
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start;">
             
             <!-- LEFT PANEL: CONTROLS -->
-            <div class="controls-panel" style="background: white; padding: 24px; border-radius: 12px; border: 1px solid var(--border); max-height: 80vh; overflow-y: auto;">
+            <div class="controls-panel card" style="max-height: 80vh; overflow-y: auto;">
                 
                 <!-- GLOBAL COLORS -->
-                <h3 style="margin-bottom: 16px; border-bottom: 1px solid var(--border); padding-bottom: 8px;">Global Colors</h3>
+                <h3 style="margin-bottom: 16px; border-bottom: 1px solid var(--border); padding-bottom: 8px; color: var(--text-primary);">Global Colors</h3>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px;">
                     <div class="form-group">
                         <label class="form-label">Primary Accent</label>
                         <div style="display: flex; gap: 8px;">
-                            <input type="color" x-model="theme.primary_color" style="height: 40px; width: 40px; padding: 0;">
+                            <input type="color" x-model="theme.primary_color" style="height: 40px; width: 40px; padding: 0; border-radius: 8px; cursor: pointer;">
                             <input type="text" name="primary_color" x-model="theme.primary_color" class="form-control" style="height: 40px;">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Secondary Color</label>
                         <div style="display: flex; gap: 8px;">
-                            <input type="color" x-model="theme.secondary_color" style="height: 40px; width: 40px; padding: 0;">
+                            <input type="color" x-model="theme.secondary_color" style="height: 40px; width: 40px; padding: 0; border-radius: 8px; cursor: pointer;">
                             <input type="text" name="secondary_color" x-model="theme.secondary_color" class="form-control" style="height: 40px;">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Background Color</label>
                         <div style="display: flex; gap: 8px;">
-                            <input type="color" x-model="theme.background_color" style="height: 40px; width: 40px; padding: 0;">
+                            <input type="color" x-model="theme.background_color" style="height: 40px; width: 40px; padding: 0; border-radius: 8px; cursor: pointer;">
                             <input type="text" name="background_color" x-model="theme.background_color" class="form-control" style="height: 40px;">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="form-label">General Text</label>
                         <div style="display: flex; gap: 8px;">
-                            <input type="color" x-model="theme.text_color" style="height: 40px; width: 40px; padding: 0;">
+                            <input type="color" x-model="theme.text_color" style="height: 40px; width: 40px; padding: 0; border-radius: 8px; cursor: pointer;">
                             <input type="text" name="text_color" x-model="theme.text_color" class="form-control" style="height: 40px;">
                         </div>
                     </div>
                 </div>
 
                 <!-- TYPOGRAPHY -->
-                <h3 style="margin-bottom: 16px; border-bottom: 1px solid var(--border); padding-bottom: 8px;">Typography & Layout</h3>
+                <h3 style="margin-bottom: 16px; border-bottom: 1px solid var(--border); padding-bottom: 8px; color: var(--text-primary);">Typography & Layout</h3>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px;">
                     <div class="form-group">
                         <label class="form-label">Font Family</label>
@@ -95,40 +95,40 @@
                 </div>
 
                 <!-- ITEM CARD STYLES -->
-                <h3 style="margin-bottom: 16px; border-bottom: 1px solid var(--border); padding-bottom: 8px;">Item Card Design</h3>
+                <h3 style="margin-bottom: 16px; border-bottom: 1px solid var(--border); padding-bottom: 8px; color: var(--text-primary);">Item Card Design</h3>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px;">
                     <div class="form-group">
                         <label class="form-label">Card Background</label>
                         <div style="display: flex; gap: 8px;">
-                            <input type="color" x-model="theme.card_background_color" style="height: 40px; width: 40px; padding: 0;">
+                            <input type="color" x-model="theme.card_background_color" style="height: 40px; width: 40px; padding: 0; border-radius: 8px; cursor: pointer;">
                             <input type="text" name="card_background_color" x-model="theme.card_background_color" class="form-control" style="height: 40px;">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Item Title Color</label>
                         <div style="display: flex; gap: 8px;">
-                            <input type="color" x-model="theme.item_title_color" style="height: 40px; width: 40px; padding: 0;">
+                            <input type="color" x-model="theme.item_title_color" style="height: 40px; width: 40px; padding: 0; border-radius: 8px; cursor: pointer;">
                             <input type="text" name="item_title_color" x-model="theme.item_title_color" class="form-control" style="height: 40px;">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Price Color</label>
                         <div style="display: flex; gap: 8px;">
-                            <input type="color" x-model="theme.item_price_color" style="height: 40px; width: 40px; padding: 0;">
+                            <input type="color" x-model="theme.item_price_color" style="height: 40px; width: 40px; padding: 0; border-radius: 8px; cursor: pointer;">
                             <input type="text" name="item_price_color" x-model="theme.item_price_color" class="form-control" style="height: 40px;">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Description Color</label>
                         <div style="display: flex; gap: 8px;">
-                            <input type="color" x-model="theme.item_description_color" style="height: 40px; width: 40px; padding: 0;">
+                            <input type="color" x-model="theme.item_description_color" style="height: 40px; width: 40px; padding: 0; border-radius: 8px; cursor: pointer;">
                             <input type="text" name="item_description_color" x-model="theme.item_description_color" class="form-control" style="height: 40px;">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Category Title Color</label>
                         <div style="display: flex; gap: 8px;">
-                            <input type="color" x-model="theme.category_title_color" style="height: 40px; width: 40px; padding: 0;">
+                            <input type="color" x-model="theme.category_title_color" style="height: 40px; width: 40px; padding: 0; border-radius: 8px; cursor: pointer;">
                             <input type="text" name="category_title_color" x-model="theme.category_title_color" class="form-control" style="height: 40px;">
                         </div>
                     </div>
@@ -160,7 +160,7 @@
                 </div>
 
                 <!-- ANIMATIONS -->
-                <h3 style="margin-bottom: 16px; border-bottom: 1px solid var(--border); padding-bottom: 8px;">Animations</h3>
+                <h3 style="margin-bottom: 16px; border-bottom: 1px solid var(--border); padding-bottom: 8px; color: var(--text-primary);">Animations</h3>
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px;">
                     <div class="form-group">
                         <label class="form-label">Animation Style</label>
@@ -181,7 +181,7 @@
                     </div>
                 </div>
 
-                <div style="position: sticky; bottom: 0; background: white; padding-top: 16px; border-top: 1px solid var(--border); display: flex; justify-content: flex-end;">
+                <div style="position: sticky; bottom: 0; background: var(--bg-surface); padding-top: 16px; border-top: 1px solid var(--border); display: flex; justify-content: flex-end; z-index: 10;">
                     <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.1rem; padding: 12px;">Save Theme & Publish</button>
                 </div>
             </div>
